@@ -1,0 +1,17 @@
+---
+
+- name: Instalando dependencias do Docker
+  hosts: docker
+  tasks:
+    - name: Instalando python-pip
+      apt:
+        name: python-pip
+
+    - name: Instalando a dependencia para o docker funfar com ansible
+      pip:
+        name: docker-py
+
+    - name: Instalando o Docker
+      apt:
+        name: docker-ce
+        state: present
